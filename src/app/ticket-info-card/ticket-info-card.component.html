@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-lg-12 col-xl-12 col-xxl-12">
+
+            <div class="row" id="main">
+                <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+                    <div class="card text-center" width="500 px">
+                        <div class="card-header">
+                            
+                            <h5 class="card-title">{{firstTicket.surgeryName}}</h5>
+
+                            <div> </div>
+
+                            <button type="button" class="btn btn-primary">New</button>
+                            <button type="button" class="btn btn-warning">Ticket id: {{firstTicket.ticketId}}</button> 
+                            <button type="button" class="btn btn-outline-dark">Order</button> 
+                            <button type="button" class="btn btn-light">{{firstTicket.priority}}</button>
+                        </div>
+                        <div class="card-body">
+                          
+                            <p class="card-text">{{firstTicket.duration}} {{firstTicket.date}}</p>
+                            <p class="card-text">{{firstTicket.doctorList}}</p>
+                            <p class="card-text">{{firstTicket.hospitalName}}</p>
+                          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+                        </div>
+                        <div class="card-footer">
+                            <ul class="nav nav-tabs card-header-tabs">
+                                <li class="nav-item">
+                                  <a class="nav-link disabled" aria-current="true" href="#">Order Details</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link Active" href="#">Hospital Details</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link disabled" href="#">Order Tracking</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

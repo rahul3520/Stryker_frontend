@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+
+                    <div class="row">
+                        <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                            <!-- <nav class="navbar bg-body-tertiary">
+                                <form class="container-fluid"> -->
+                                <div class="input-group">
+                                    
+                                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                    <img src="" alt="">
+                                </div>
+                                <!-- </form>
+
+                            </nav> -->
+
+                            <ul class="nav nav-tabs card-header-tabs">
+                                <li class="nav-item">
+                                  <h5><a class="nav-link disabled" aria-current="true" href="#">All Request</a></h5>
+                                </li>
+                                <li class="nav-item">
+                                  <h5><a class="nav-link disabled" href="#">Demo Request</a></h5>
+                                </li>
+                                
+                            </ul>
+
+                            <ul class="nav nav-tabs card-header-tabs">
+                                <li class="nav-item">
+                                  <a class="nav-link disabled" aria-current="true" href="#">Filter</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link disabled" href="#">All Type</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#">Status</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#">Last 5 days</a>
+                                </li>  
+                            </ul>
+
+                        </div>
+
+                        <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8" margin-left="200px">
+                            <!-- ticket info selector tag -->
+                            <app-ticket-info-card></app-ticket-info-card>
+                        </div>
+
+                    </div>
+
+                    <!-- <div class="row" id="placeCardtoRight">
+                        
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+           
+
+            <div class="row">
+                <div class="col col-12 col-sm-4 col-col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <ul class="list-group" *ngFor="let i of tickets">
+                        
+                        <div class="card" style="width: 23rem;">
+                            <div class="card-body">
+                               
+                                <button type="button" class="btn btn-primary">New</button>
+                                <button type="button" class="btn btn-warning" (click)="GoToOrderDetailsPage(i.ticketId)">Ticket id: {{i.ticketId}}</button> 
+                                <button type="button" class="btn btn-outline-dark">Order</button> 
+                                <button type="button" class="btn btn-light">{{i.priority}}</button>
+            
+                                <h5 class="card-title">{{i.surgeryName}}</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">{{i.duration}} {{i.date}}</h6>
+                                <p class="card-text">{{i.itemsOrdered}} Items Ordered</p>
+                                <p class="card-text">{{i.status}} </p>
+
+                            </div>
+                        </div>
+                    </ul>   
+                        
+                </div>
+            </div>
+
+            
+        </div>

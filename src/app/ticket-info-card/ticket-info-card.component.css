@@ -1,0 +1,7 @@
+#main div {
+    flex: 1;
+    border: 1px solid rgb(230, 229, 229);
+    display: flex;
+    align-self: stretch;
+    
+}

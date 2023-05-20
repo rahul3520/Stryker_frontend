@@ -1,0 +1,23 @@
+.searchBar {
+    margin: 0 auto;
+    /* allign: center; */
+}
+
+#logo {
+    /* align:middle; */
+    text-align:center
+}
+
+.img {
+    display: block;
+    align:left;
+    width:100px;
+    padding: 0px 0px 0px 0px;
+    border: 0;
+    margin: 0;
+    outline: 0;
+    float: left;  
+    text-align: left;
+}
+
+  
