@@ -1,4 +1,3 @@
-#placeCardtoRight div
-{
+#placeCardtoRight div{
     place-items: end stretch;
 }

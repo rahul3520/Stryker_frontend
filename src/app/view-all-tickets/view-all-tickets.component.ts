@@ -19,12 +19,12 @@ export class ViewAllTicketsComponent {
     )
   }
 
-  GoToOrderDetailsPage=(ticketId:any)=>
-  {
-    localStorage.setItem("ticketIdClicked",ticketId)
-    console.log(ticketId)
-    this.route.navigate(["/orderPage"])
-  }
+  // GoToOrderDetailsPage=(ticketId:any)=>
+  // {
+  //   localStorage.setItem("ticketIdClicked",ticketId)
+  //   console.log(ticketId)
+  //   this.route.navigate(["/orderPage"])
+  // }
 
   tickets:any=[]
 

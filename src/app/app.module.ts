@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TicketInfoCardComponent } from './ticket-info-card/ticket-info-card.component';
 import { OrderDetailsPageComponent } from './order-details-page/order-details-page.component';
 import { HospitalDetailsCardComponent } from './hospital-details-card/hospital-details-card.component';
+import { CardListComponent } from './card-list/card-list.component';
 
 const myRoute:Routes=[
   {
@@ -31,7 +32,8 @@ const myRoute:Routes=[
     NavbarComponent,
     TicketInfoCardComponent,
     OrderDetailsPageComponent,
-    HospitalDetailsCardComponent
+    HospitalDetailsCardComponent,
+    CardListComponent
   ],
   imports: [
     BrowserModule,
