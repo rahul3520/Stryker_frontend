@@ -20,7 +20,7 @@ export class OrderDetailsPageComponent {
       }
 
     )
-    
+
     let data:any={"ticketId":localStorage.getItem("ticketIdClicked")}
 
     console.log(data)
@@ -53,7 +53,7 @@ export class OrderDetailsPageComponent {
         console.log("hospital info")
         console.log(this.customer)
         
-        localStorage.setItem("DetailsOfHospital",this.customer)
+        // localStorage.setItem("DetailsOfHospital",this.customer)
 
         console.log("customer details set in local storage")
         console.log(localStorage.getItem("DetailsOfHospital"))
