@@ -1,16 +1,43 @@
 
 
-<nav class="navbar bg-body-tertiary">
+<header class="navbar bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand"></a>
         <div id="left" class='left'>
 
-          <img class="img" src="assets\images\stryker_icon.png" alt="">
+          <img class="img" src="assets\images\stryker_icon.png" alt="" style="margin-right:400px;">
     
         </div>
-        <form class="d-flex" role="search" id="searchBar">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-        <button class="btn btn-outline-success" type="submit">Create</button>
-      </form>
+
+        <form class="d-flex" role="search" id="search-bar">
+          <span class="input-group-text" id="basic-addon1"><button class="btn btn-light"><img src="assets\images\search_icon.png" alt="" style="height: 10px;width: 10px;"></button></span>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+        </form>
+
+
+        <!-- <button class="btn btn-outline-success" type="submit">Create</button> -->
+        <select class="btn align-right">
+          <option value="">Create</option>
+          <option value="option1">New Ticket</option>
+          <option value="option2">Invoice</option>
+          <option value="option3">Payment</option>
+        </select>
+
+        <button class="btn btn-light"><img src="assets\images\bell_icon1.png" alt="" style="width: 30px; height: 30px;" ></button>
+
+        <img src="assets\images\admin_icon1.png" alt="" style="width: 40px; height: 40px;">
+
+        <select name="" id="">
+          <option value="">Admin</option>
+        </select>
+
+        <button class="btn btn-light"><img src="assets\images\gear_icon.png" alt="" style="width: 30px; height: 30px;" ></button>
+
     </div>
-  </nav>
+</header>
+
+<nav class="side-nav border">
+
+    <a routerLink="#"><i class="fas fa-qrcode"></i></a>
+    
+</nav>

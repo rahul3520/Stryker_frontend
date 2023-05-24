@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  
+  selectedOption:string=""
 
+  onSelectionChange(option: string) {
+    this.selectedOption = option;
+  }
 }

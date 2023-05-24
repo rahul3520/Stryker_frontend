@@ -1,6 +1,18 @@
-.searchBar {
-    margin: 0 auto;
-    /* allign: center; */
+.search-bar {
+
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+    
+.search-bar input {
+    
+    padding: 5px;
+    width: 400px;
+    background-color: #f1f9fd;
+    
 }
 
 #logo {
@@ -10,7 +22,7 @@
 
 .img {
     display: block;
-    align:left;
+    /* align:left; */
     width:100px;
     padding: 0px 0px 0px 0px;
     border: 0;
@@ -19,5 +31,67 @@
     float: left;  
     text-align: left;
 }
+
+nav.side-nav {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    background-color: #ffffff;
+    border: #888;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+    
+nav.side-nav a {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    background-color: #fff8eb;
+    background-size: 200% 100%;
+    background-position: right bottom;
+
+}
+    
+nav.side-nav a i {
+
+    color: #ffae00;
+    font-size: 30px;
+    position: absolute;
+    left: 55%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+nav.side-nav a:before {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 50px;
+    background-color: #ffae00;
+
+}
+    
+nav.side-nav a:first-child {
+    
+    margin-top: 60px;
+}
+
 
   

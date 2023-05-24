@@ -28,9 +28,9 @@ export class ApiService {
 
   ShowGeneralInfoAboutHospital=()=>
   {
-    this.nameOfHospital=localStorage.getItem('hospitalName')
+    this.nameOfHospital=localStorage.getItem("hospitalName")
     console.log(this.nameOfHospital)
-    return this.http.get("http://localhost:8080/viewHospitalDetails/$\{\{this.nameOfHospital\}\}")
+    return this.http.get("http://localhost:8080/viewHospitalDetails/"+this.nameOfHospital)
   }
 
   ViewAllOtherTickets=()=>

@@ -8,11 +8,14 @@
                         <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                             <!-- <nav class="navbar bg-body-tertiary">
                                 <form class="container-fluid"> -->
+                                <h5><button class="btn btn-light"><img src="assets\images\parallel_lines.png" alt="" style="width: 30px; height: 30px;"></button> Alerts</h5>    
                                 <div class="input-group">
                                     
                                     <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
-                                    <span class="input-group-text" id="basic-addon1">@</span>
-                                    <img src="" alt="">
+                                    <!-- <span class="input-group-text" id="basic-addon1"><img src="assets\images\search_icon.png" alt="" style="width: 20px; height: 20px;"></span> -->
+                                    <span class="input-group-text" id="basic-addon1"><button class="btn btn-light"><img src="assets\images\search_icon.png" alt="" style="height: 10px;width: 10px;"></button></span>
+                                    <button class="btn btn-light"><img src="assets\images\filter_icon.png" alt="" style="width: 30px; height: 30px;"></button>
+
                                 </div>
                                 <!-- </form>
 
@@ -30,18 +33,59 @@
 
                             <ul class="nav nav-tabs card-header-tabs">
                                 <li class="nav-item">
-                                  <a class="nav-link disabled" aria-current="true" href="#">Filter</a>
+                                    <a class="nav-link disabled" aria-current="true" href="#"><h5>Filter</h5></a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link disabled" href="#">All Type</a>
+                                    <select name="" id="">
+                                        <option value="">All Type</option>
+                                        <option value="option1">Order</option>
+                                        <option value="option2">Return</option>
+                                    </select>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link disabled" href="#">Status</a>
+                                    <select name="" id="">
+                                        <option value="">Status</option>
+                                    </select>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link disabled" href="#">Last 5 days</a>
+                                    <select name="" id="">
+                                        <option value="">Last 5 days</option>
+                                    </select>
                                 </li>  
                             </ul>
+
+                            <ul class="list-group" *ngFor="let i of tickets">
+                        
+                                <div class="card" style="width: 25rem;">
+                                    <div class="card-body">
+                                       
+                                        <button type="button" class="btn btn-primary">New</button>
+                                        <button type="button" class="btn btn-warning" (click)="GoToOrderDetailsPage(i.ticketId)">Ticket id: {{i.ticketId}}</button> 
+                                        <button type="button" class="btn btn-outline-dark">Order</button> 
+                                        <!-- <button type="button" class="btn btn-light">{{i.priority}}</button> -->
+        
+                                        <select name="" id="">
+                                            <option value="option1">{{i.priority}}</option>
+                                        </select>
+                    
+                                        <h5 class="card-title">{{i.surgeryName}}</h5>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary"><img src="assets\images\timer.png" alt="" style="width: 20px; height: 20px;" >{{i.duration}} {{i.date}}</h6>
+                                        <p class="card-text"><img src="assets\images\drill_icon.png" alt="" style="width: 20px; height: 20px;">{{i.itemsOrdered}} Items Ordered</p>
+                                        
+                                        <!-- <p class="card-text">{{i.status}} </p> -->
+        
+                                        <img src="assets\images\ecg_new.png" alt="" style="width: 20px; height: 20px;">
+                                        <select name="" id="">
+                                            <option value="option1">{{i.status}}</option>
+                                        </select>
+        
+                                        <button class="btn btn-light"><img src="assets\images\admin_small.png" alt="" style="width: 20px; height: 20px;"></button>                                
+                    
+        
+                                    </div>
+                                </div>
+                            </ul> 
+
 
                         </div>
 
@@ -60,33 +104,16 @@
             </div>
         </div>
 
-        <div class="container">
+        <!-- <div class="container">
 
            
 
             <div class="row">
                 <div class="col col-12 col-sm-4 col-col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                    <ul class="list-group" *ngFor="let i of tickets">
-                        
-                        <div class="card" style="width: 23rem;">
-                            <div class="card-body">
-                               
-                                <button type="button" class="btn btn-primary">New</button>
-                                <button type="button" class="btn btn-warning" (click)="GoToOrderDetailsPage(i.ticketId)">Ticket id: {{i.ticketId}}</button> 
-                                <button type="button" class="btn btn-outline-dark">Order</button> 
-                                <button type="button" class="btn btn-light">{{i.priority}}</button>
-            
-                                <h5 class="card-title">{{i.surgeryName}}</h5>
-                                <h6 class="card-subtitle mb-2 text-body-secondary">{{i.duration}} {{i.date}}</h6>
-                                <p class="card-text">{{i.itemsOrdered}} Items Ordered</p>
-                                <p class="card-text">{{i.status}} </p>
-
-                            </div>
-                        </div>
-                    </ul>   
+                      
                         
                 </div>
             </div>
 
             
-        </div>
+        </div> -->

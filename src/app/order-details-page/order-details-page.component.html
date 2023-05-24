@@ -8,10 +8,16 @@
                         <div class="col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                             <nav class="navbar bg-body-tertiary">
                                 <form class="container-fluid">
+                                
+                                <h5><button class="btn btn-light"><img src="assets\images\parallel_lines.png" alt="" style="width: 30px; height: 30px;"></button> Alerts</h5>    
+
+                                    
                                 <div class="input-group">
                                     
                                     <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
-                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                    <!-- <span class="input-group-text" id="basic-addon1"><img src="assets\images\search_icon.png" alt="" style="width: 20px; height: 20px;"></span> -->
+                                    <span class="input-group-text" id="basic-addon1"><button class="btn btn-light"><img src="assets\images\search_icon.png" alt="" style="height: 10px;width: 10px;"></button></span>
+                                    <button class="btn btn-light"><img src="assets\images\filter_icon.png" alt="" style="width: 30px; height: 30px;"></button>
                                 </div>
                                 </form>
 
@@ -29,18 +35,63 @@
 
                             <ul class="nav nav-tabs card-header-tabs">
                                 <li class="nav-item">
-                                  <a class="nav-link disabled" aria-current="true" href="#">Filter</a>
+                                  <a class="nav-link disabled" aria-current="true" href="#"><h5>Filter</h5></a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link disabled" href="#">All Type</a>
+                                  <!-- <a class="nav-link disabled" href="#">All Type</a> -->
+                                    <select name="" id="">
+                                        <option value="">All Type</option>
+                                        <option value="option1">Order</option>
+                                        <option value="option2">Return</option>
+                                    </select>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <!-- <a class="nav-link disabled" href="#">Status</a> -->
+                                    <select name="" id="">
+                                        <option value="">Status</option>
+                                    </select>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link disabled" href="#">Status</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled" href="#">Last 5 days</a>
+                                    <!-- <a class="nav-link disabled" href="#">Last 5 days</a> -->
+                                    <select name="" id="">
+                                        <option value="">Last 5 days</option>
+                                    </select>
                                 </li>  
                             </ul>
+
+                            <ul class="list-group" *ngFor="let i of tickets">
+                                
+                                <div class="card" style="width: 26rem;">
+                                    <div class="card-body">
+                                       
+                                        <button type="button" class="btn btn-primary">New</button>
+                                        <button type="button" class="btn btn-warning">Ticket id: {{i.ticketId}}</button> 
+                                        <button type="button" class="btn btn-outline-dark">Order</button> 
+                                        
+                                        <!-- <button type="button-sm" class="btn btn-light">{{i.priority}}</button> -->
+                                        <select name="" id="">
+                                            <option value="option1">{{i.priority}}</option>
+                                        </select>
+
+                                        <h5 class="card-title">{{i.surgeryName}}</h5>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary"><img src="assets\images\timer.png" alt="" style="width: 20px; height: 20px;" >{{i.duration}} {{i.date}}</h6>
+                                        <p class="card-text"> <img src="assets\images\drill_icon.png" alt="" style="width: 20px; height: 20px;">{{i.itemsOrdered}} Items Ordered</p>
+                                        
+                                        <!-- <p class="card-text">{{i.status}} </p> -->
+                                        <img src="assets\images\ecg_new.png" alt="" style="width: 20px; height: 20px;">
+
+                                        <select name="" id="">
+                                            <option value="option1">{{i.status}}</option>
+                                        </select>
+
+                                        <button class="btn btn-light"><img src="assets\images\admin_small.png" alt="" style="width: 20px; height: 20px;"></button>                                
+
+
+                                    </div>
+                                </div>
+                            </ul> 
+
 
                         </div>
 
@@ -49,21 +100,35 @@
                             <div class="card text-center" width="500 px">
                                 <div class="card-header">
                                     
-                                    <h5 class="card-title">{{ticketClicked[0].surgeryName}}</h5>
+                                    <h5 class="card-title" style="text-justify:left;">{{ticketClicked[0].surgeryName}}</h5>
         
                                     <div> </div>
         
                                     <button type="button" class="btn btn-primary">New</button>
                                     <button type="button" class="btn btn-warning">Ticket id: {{ticketClicked[0].ticketId}}</button> 
                                     <button type="button" class="btn btn-outline-dark">Order</button> 
-                                    <button type="button" class="btn btn-light">{{ticketClicked[0].priority}}</button>
+                                    <!-- <button type="button" class="btn btn-light">{{ticketClicked[0].priority}}</button> -->
+                                    
+                                    <select name="" id="">
+                                        <option value="">{{ticketClicked[0].priority}}</option>
+                                    </select>
+                                
                                 </div>
                                 <div class="card-body">
                                   
-                                    <p class="card-text">{{ticketClicked[0].duration}} {{ticketClicked[0].date}}</p>
-                                    <p class="card-text">{{ticketClicked[0].doctorList}}</p>
-                                    <p class="card-text">{{ticketClicked[0].hospitalName}}</p>
+                                    <p class="card-text"><img src="assets\images\timer.png" alt="" style="width: 20px; height: 20px;" >{{ticketClicked[0].duration}} {{ticketClicked[0].date}}</p>
+                                    <p class="card-text"><img src="assets\images\people_group.png" alt="" style="width: 20px; height: 20px;">{{ticketClicked[0].doctorList}}</p>
+                                    <p class="card-text"><img src="assets\images\building.png" alt="" style="width: 20px; height: 20px;">{{ticketClicked[0].hospitalName}}</p>
                                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+                                    <img src="assets\images\ecg_new.png" alt="" style="width: 20px; height: 20px;">
+                                    <select name="" id="">
+                                        <option value="">{{ticketClicked[0].status}}</option>
+                                    </select>
+                                    <img src="assets\images\admin_small.png" alt="" style="width: 20px; height: 20px;">
+                                    <select name="" id="">
+                                        <option value="">{{ticketClicked[0].assignedAgent}}</option>
+                                    </select>
         
                                 </div>
                                 <div class="card-footer">
@@ -81,6 +146,114 @@
                                     </ul>
                                 </div>
                             </div>
+
+                            <div class="card text-bg-light mb-3" width="10000 px">
+                                <div class="card-header">
+                                   
+                                    <h3>Hospital Details <button class="btn btn-light" style="margin-left: 750px;">...</button></h3>
+                                    
+                                
+                                    
+                                </div>
+                
+                                <div class="card-body">
+                                  <!-- <h5 class="card-title">Light card title</h5> -->
+
+                                  <table class="table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>Customer Type   :</td>
+                                            <td>{{customer[0].customerType}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Customer Name:</td>
+                                            <td>{{customer[0].customerName}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Requested By:</td>
+                                            <td>{{customer[0].requestedBy}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Addresss:</td>
+                                            <td>{{customer[0].postOffice}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>{{customer[0].city}},{{customer[0].state}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>{{customer[0].pincode}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phone Number:</td>
+                                            <td>{{customer[0].phoneNumber}}</td>
+                                        </tr>
+                                    </tbody>
+                                  </table>
+                                  <!-- <p class="card-text">Customer Type      {{customer[0].customerType}}</p>
+                                  <p class="card-text">Customer Name      {{customer[0].customerName}}</p>
+                                  <p class="card-text">Requested By       {{customer[0].requestedBy}}</p>
+                                  <p class="card-text">Addresss           {{customer[0].postOffice}}</p>
+                                  <p class="card-text">                   {{customer[0].city}},{{customer[0].state}}</p>
+                                  <p class="card-text">                   {{customer[0].pincode}}</p>
+                                  <p class="card-text">Phone Number       {{customer[0].phoneNumber}}</p>
+                 -->
+                                </div>
+                            </div>
+
+                            
+                            <h3>
+                                Other Tickets
+                                <button class="btn btn-light"><img src="assets\images\search_icon.png" alt="" style="width: 10px; height: 10px;margin-left: 550px;"></button>
+                                <button class="btn btn-light"><img src="assets\images\filter_B&W.png" alt="" style="width: 10px; height: 10px;"></button>                                
+                                <button class="btn btn-light"><img src="assets\images\3dots.png" alt="" style="width: 10px; height: 10px;"></button>
+                            </h3>
+                            
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Ticket number</th>
+                                        <th>Requested date</th>
+                                        <th>Return date</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody *ngFor="let j of otherTickets">
+                                    <tr>
+                                        <!-- <td><img src="assets/images/right_arrow.png" alt=""></td> -->
+                                        <td><button class="btn btn-light">></button></td>
+                                        <td>{{j.ticketNumber}}</td>
+                                        <td>{{j.requestedDate}}</td>
+                                        <td>{{j.returnDate}}</td>
+                                        <td>{{j.status}}</td>
+                                        <td><button class="btn btn-light">...</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination" style="justify-content: end;">
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                            </nav>
+
+
                         </div>
 
                     </div>
@@ -98,53 +271,16 @@
                 <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
 
                     <div class="row">
-                        <div class="col col-12 col-sm-4 col-col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                            <ul class="list-group" *ngFor="let i of tickets">
+                        <!-- <div class="col col-12 col-sm-4 col-col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                             
                                 
-                                <div class="card" style="width: 23rem;">
-                                    <div class="card-body">
-                                       
-                                        <button type="button" class="btn btn-primary">New</button>
-                                        <button type="button" class="btn btn-warning">Ticket id: {{i.ticketId}}</button> 
-                                        <button type="button" class="btn btn-outline-dark">Order</button> 
-                                        <button type="button-sm" class="btn btn-light">{{i.priority}}</button>
-                                        
-                                        <h5 class="card-title">{{i.surgeryName}}</h5>
-                                        <h6 class="card-subtitle mb-2 text-body-secondary">{{i.duration}} {{i.date}}</h6>
-                                        <p class="card-text">{{i.itemsOrdered}} Items Ordered</p>
-                                        <p class="card-text">{{i.status}} </p>
-        
-                                    </div>
-                                </div>
-                            </ul>   
-                                
-                        </div>
+                        </div> -->
 
                         <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
-                            <h3>Other Tickets</h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Ticket number</th>
-                                        <th>Requested date</th>
-                                        <th>Return date</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-        
-                                <tbody *ngFor="let j of otherTickets">
-                                    <tr>
-                                        <td><img src="assets/images/right_arrow.png" alt=""></td>
-                                        <td>{{j.ticketNumber}}</td>
-                                        <td>{{j.requestedDate}}</td>
-                                        <td>{{j.returnDate}}</td>
-                                        <td>{{j.status}}</td>
-                                        <td><button class="btn btn-light">...</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                            <!-- <app-hospital-details-card></app-hospital-details-card> -->
+
+                            
         
                         </div>
                     

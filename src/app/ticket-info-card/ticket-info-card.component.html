@@ -14,13 +14,37 @@
                             <button type="button" class="btn btn-primary">New</button>
                             <button type="button" class="btn btn-warning">Ticket id: {{firstTicket.ticketId}}</button> 
                             <button type="button" class="btn btn-outline-dark">Order</button> 
-                            <button type="button" class="btn btn-light">{{firstTicket.priority}}</button>
+                            <!-- <button type="button" class="btn btn-light">{{firstTicket.priority}}</button> -->
+
+                            <select name="" id="">
+                                <option value="">{{firstTicket.priority}}</option>
+                            </select>
                         </div>
                         <div class="card-body">
                           
-                            <p class="card-text">{{firstTicket.duration}} {{firstTicket.date}}</p>
-                            <p class="card-text">{{firstTicket.doctorList}}</p>
-                            <p class="card-text">{{firstTicket.hospitalName}}</p>
+                            <p class="card-text"><img src="assets\images\timer.png" alt="" style="width: 20px; height: 20px;" >{{firstTicket.duration}} {{firstTicket.date}}</p>
+                            <br/>
+
+                            <!-- <textarea>Hello &#10;&#13;Stackoverflow</textarea> -->
+                            <!-- &#10;&#13; -->
+                            <em>
+                            <p class="card-text" style="justify-items: left;"><img src="assets\images\people_group.png" alt="" style="width: 20px; height: 20px;">{{firstTicket.doctorList}}</p>
+                            
+                            </em>
+
+                            <em>
+                            <p class="card-text"><img src="assets\images\building.png" alt="" style="width: 20px; height: 20px;">{{firstTicket.hospitalName}}</p>
+                            </em>
+
+                            <img src="assets\images\ecg_new.png" alt="" style="width: 20px; height: 20px;">
+
+                            <select name="" id="">
+                                <option value="">{{firstTicket.status}}</option>
+                            </select>
+                            <img src="assets\images\admin_small.png" alt="" style="width: 20px; height: 20px;">
+                            <select name="" id="">
+                                <option value="">{{firstTicket.assignedAgent}}</option>
+                            </select>
                           <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
 
                         </div>
