@@ -67,7 +67,7 @@
                                 </select>
 
                                 <h5 class="card-title">{{i.surgeryName}}</h5>
-                                <h6 class="card-subtitle mb-2 text-body-secondary"><img src="assets\images\timer.png" alt="" style="width: 20px; height: 20px;" >{{i.duration}} {{i.date}}</h6>
+                                <h6 class="card-subtitle mb-2 text-body-secondary"><img src="assets\images\timer.png" alt="" style="width: 20px; height: 20px;" >{{i.duration}} {{i.date | date:'longDate'}}</h6>
                                 <p class="card-text"><img src="assets\images\drill_icon.png" alt="" style="width: 20px; height: 20px;">{{i.itemsOrdered}} Items Ordered</p>
                                 
 
@@ -105,7 +105,7 @@
                         </div>
                         <div class="card-body">
                             
-                            <p class="card-text"><img src="assets\images\timer.png" alt="" style="width: 20px; height: 20px;" >{{ticketClicked[0].duration}} {{ticketClicked[0].date}}</p>
+                            <p class="card-text"><img src="assets\images\timer.png" alt="" style="width: 20px; height: 20px;" >{{ticketClicked[0].duration}} {{ticketClicked[0].date | date:'longDate'}}</p>
                             <p class="card-text"><img src="assets\images\people_group.png" alt="" style="width: 20px; height: 20px;">{{ticketClicked[0].doctorList}}</p>
                             <p class="card-text"><img src="assets\images\building.png" alt="" style="width: 20px; height: 20px;">{{ticketClicked[0].hospitalName}}</p>
 
@@ -182,11 +182,15 @@
                             
                             <h3>
                                 Other Tickets
+                                
                                 <button class="btn btn-light"><img src="assets\images\search_icon.png" alt="" style="width: 10px; height: 10px;margin-left: 550px;"></button>
                                 <button class="btn btn-light"><img src="assets\images\filter_B&W.png" alt="" style="width: 10px; height: 10px;"></button>                                
                                 <button class="btn btn-light"><img src="assets\images\3dots.png" alt="" style="width: 10px; height: 10px;"></button>
+                                
+                                
                             </h3>
-                            
+                          
+                           
                             <table>
                                 <thead>
                                     <tr>

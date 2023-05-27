@@ -20,4 +20,13 @@ describe('NavbarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set the selected option', () => {
+    const option = 'Option 1';
+
+    component.onSelectionChange(option);
+
+    expect(component.selectedOption).toBe(option);
+  });
+
 });

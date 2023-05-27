@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges  } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
+
+import { SharedService } from 'src/app/shared.service';
+
 
 @Component({
   selector: 'app-order-details-page',
   templateUrl: './order-details-page.component.html',
   styleUrls: ['./order-details-page.component.css']
 })
-export class OrderDetailsPageComponent{
+export class OrderDetailsPageComponent {
 
   nameOfHospital=""
   customer:any=""
@@ -16,12 +19,28 @@ export class OrderDetailsPageComponent{
   tickets:any=[]
   otherTickets:any=[]
 
-  surgeryName:String=new String();
-  customerType:String=new String();
+  // surgeryName:String=new String();
+  // customerType:String=new String();
 
   showHospitalInfo:boolean=false
 
-  constructor(private api:ApiService,private route:Router)
+  public apiData: any=[];
+
+  // ngOnInit() {
+  //   this.sharedService.fetchDataFromAPI();
+  // }
+
+  // ngOnChanges() {
+
+  //   this.sharedService.apiData$.subscribe((data) => {
+  //     this.apiData = data;
+  //     console.log("api data from shared service")
+  //     console.log(this.apiData)
+  //   });
+  // }
+
+
+  constructor(private api:ApiService,private route:Router,private sharedService: SharedService)
   {
     this.api.ViewAllTicketDetails().subscribe(
       (response1: any) => {
@@ -56,17 +75,7 @@ export class OrderDetailsPageComponent{
     
   }
 
-  // ngOnit() {
-
-   
-  // }
-
-  // GoToOrderDetailsPage=(ticketId:any)=>
-  // {
-  //   localStorage.setItem("ticketIdClicked",ticketId)
-  //   console.log(ticketId)
-  //   this.route.navigate(["/orderPage"])
-  // }
+  
 
   ViewHospitalDetails=()=>
   {
@@ -78,12 +87,7 @@ export class OrderDetailsPageComponent{
         console.log(this.customer)
 
         this.showHospitalInfo=true
-        
-        // localStorage.setItem("DetailsOfHospital",this.customer)
-
-        // console.log("customer details set in local storage")
-        // console.log(localStorage.getItem("DetailsOfHospital"))
-  
+     
   
       }
     )
